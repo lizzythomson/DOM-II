@@ -4,7 +4,7 @@ const firstImage = document.querySelector("img");
 
 let cursorOverFirstImg = 0;
 
-firstImage.addEventListener("mouseover", function (event) {
+firstImage.addEventListener("mouseover", function () {
   cursorOverFirstImg += 1;
   console.log(
     `You have moved your mouse of the top image ${cursorOverFirstImg} times!`
@@ -13,7 +13,7 @@ firstImage.addEventListener("mouseover", function (event) {
 
 const brokenLink = document.querySelector("a:nth-of-type(2)");
 
-brokenLink.addEventListener("click", function (event) {
+brokenLink.addEventListener("click", function () {
   console.log("Sorry! The About Us link is not working yet...Coming soon!");
 });
 
@@ -24,7 +24,7 @@ document.addEventListener("keydown", function (event) {
 
 const firstButton = document.querySelector(".btn:nth-of-type(1)");
 
-firstButton.addEventListener("dblclick", function (event) {
+firstButton.addEventListener("dblclick", function () {
   firstButton.style.color = "red";
   console.log(firstButton.style);
 });
@@ -44,14 +44,16 @@ lastImage.addEventListener("mouseleave", function () {
   lastImage.src = "http://localhost:9000/img/destination.jpg";
 });
 
-// Your code goes here!
-// * [ ] `mouseover`
-// * [ ] `keydown`
-// * [ ] `wheel`
-// * [ ] `load`
-// * [ ] `focus`
-// * [ ] `resize`
-// * [ ] `scroll`
-// * [ ] `select`
-// * [ ] `dblclick`
-// * [ ] `drag / drop`
+document.addEventListener("resize", function () {
+  console.log("You resized the page");
+});
+
+document.addEventListener("copy", function () {
+  alert("You copied something! Sweet!");
+});
+
+const headerSection = document.querySelector("header");
+
+headerSection.addEventListener("select", function () {
+  console.log("You selected the header section!");
+});
