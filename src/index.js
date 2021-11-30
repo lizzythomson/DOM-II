@@ -18,8 +18,10 @@ brokenLink.addEventListener("click", function () {
 });
 
 document.addEventListener("keydown", function (event) {
-  event.preventDefault();
-  console.log("Sorry, can't use the down arrow at this time #notaccessable");
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+    console.log("Sorry, can't use the down arrow at this time #notaccessable");
+  }
 });
 
 const firstButton = document.querySelector(".btn:nth-of-type(1)");
@@ -44,7 +46,7 @@ lastImage.addEventListener("mouseleave", function () {
   lastImage.src = "http://localhost:9000/img/destination.jpg";
 });
 
-document.addEventListener("resize", function () {
+window.addEventListener("resize", function () {
   console.log("You resized the page");
 });
 
@@ -52,8 +54,10 @@ document.addEventListener("copy", function () {
   alert("You copied something! Sweet!");
 });
 
-const headerSection = document.querySelector("header");
+document.addEventListener("keydown", function () {
+  document.body.style.backgroundColor = "grey";
+});
 
-headerSection.addEventListener("select", function () {
-  console.log("You selected the header section!");
+document.addEventListener("keyup", function () {
+  document.body.style.backgroundColor = "white";
 });
